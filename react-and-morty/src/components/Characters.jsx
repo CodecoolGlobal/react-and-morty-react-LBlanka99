@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 import { mainUrls } from "../api/dataRoutes";
 import CharacterCard from "./characterCard";
 import PageButton from "./PageButton";
@@ -32,6 +32,7 @@ const Characters = () => {
   }
 
 
+
   const jumpTo = (number) => {
     fetchCharacters(number);
     setCurrentPage(number);
@@ -61,8 +62,7 @@ const Characters = () => {
         
       </div>
     </div>
-  )
-
-}
+  );
+};
 
 export default Characters;

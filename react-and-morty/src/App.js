@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Characters from "./components/Characters";
 import Home from "./components/Home";
@@ -9,25 +9,27 @@ function App() {
 
   const showCharacters = () => {
     setDisplay("Characters");
-  }
+  };
 
   const showLocations = () => {
     setDisplay("Locations");
-  }
+  };
   let element;
 
-  if(display === "Characters") {
-    element = <Characters/>
+  if (display === "Characters") {
+    element = <Characters />;
   }
 
   if (display === "Locations") {
-    element = <Locations/>
+    element = <Locations />;
   }
 
-  return <div className="App">
-    <Home showCharacters={showCharacters} showLocations={showLocations}/>
-    {element}
-  </div>;
+  return (
+    <div className="App">
+      <Home showCharacters={showCharacters} showLocations={showLocations} />
+      {element}
+    </div>
+  );
 }
 
 export default App;
