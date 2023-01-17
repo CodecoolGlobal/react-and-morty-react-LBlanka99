@@ -3,21 +3,24 @@ import "./App.css";
 import Characters from "./components/Characters";
 import Home from "./components/Home";
 import Locations from "./components/Locations";
-import CharacterInfo from "./components/CharacterInfo";
 
 function App() {
   const [display, setDisplay] = useState(null);
   const [characters, setCharacters] = useState(null);
   const [locations, setLocations] = useState(null);
-  const [characterInfo, setCharacterInfo] = useState(null);
+  //const [characterInfo, setCharacterInfo] = useState("invisible");
 
   const showCharacters = () => {
     setDisplay("Characters");
   };
 
-  const characterDisplay = (character) => {
-    setCharacterInfo("visible");
-  };
+  //const characterDisplay = (character) => {
+  //  if (characterInfo === "invisible") {
+  //    setCharacterInfo("visible");
+  //  } else {
+  //    setCharacterInfo("invisible");
+  //  }
+  //};
 
   const showLocations = () => {
     setDisplay("Locations");
@@ -25,7 +28,7 @@ function App() {
   let element;
 
   if (display === "Characters") {
-    element = <Characters characterDisplay={characterDisplay} />;
+    element = <Characters />;
   }
 
   if (display === "Locations") {

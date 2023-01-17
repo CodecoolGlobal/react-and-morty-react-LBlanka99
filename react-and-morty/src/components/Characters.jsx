@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { mainUrls } from "../api/dataRoutes";
 import CharacterCard from "./characterCard";
 
-const Characters = ({ characterDisplay }) => {
+const Characters = () => {
   const [characters, setCharacters] = useState(null);
 
   useEffect(() => {
@@ -22,16 +22,7 @@ const Characters = ({ characterDisplay }) => {
   return (
     <div>
       <div className="character-list">
-        {characters &&
-          characters.map((character) => (
-            <CharacterCard
-              onClick={() => {
-                characterDisplay(character);
-              }}
-              character={character}
-              key={character.id}
-            />
-          ))}
+        {characters && characters.map((character) => <CharacterCard character={character} key={character.id} />)}
       </div>
       <div className="nav-buttons">
         <button>Previous page</button>
