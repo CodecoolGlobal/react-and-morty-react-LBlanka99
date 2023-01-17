@@ -182,3 +182,7 @@ button:disabled {
 .location-info:hover {
   color: #1B262C;
 }
+
+.page-buttons {
+  display: flex;
+}

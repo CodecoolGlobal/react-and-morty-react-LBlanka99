@@ -1,34 +1,40 @@
 import React, { useState, useEffect } from "react"
 import { mainUrls } from "../api/dataRoutes";
 import CharacterCard from "./characterCard";
+import PageButton from "./PageButton";
 
 const Characters = () => {
   const [characters, setCharacters] = useState(null);
-  const [page, setPage] = useState(1);
+  const pageListLength = 9;
+  const [currentPage, setCurrentPage] = useState(1);
+  let pageList = [];
+  if (characters) {
+    let firstPageNumber;
+    if (currentPage <= pageListLength / 2) {
+      firstPageNumber = Math.max(currentPage - Math.floor(pageListLength / 2), 1);
+    } else {
+      firstPageNumber = Math.min(currentPage - Math.floor(pageListLength / 2), characters.info.pages - (pageListLength - 1));
+    }
+    pageList = Array.from( {length: pageListLength}, (v, i) => i + firstPageNumber);
+  } 
+   
+  
 
   useEffect(() => {
     fetchCharacters();
   }, []);
   
-  const fetchCharacters = (currentPage = mainUrls.characters) => {
+  const fetchCharacters = (page = "") => {
     setCharacters(null);
-    fetch(currentPage)
+    fetch(`${mainUrls.characters}${page}`)
     .then(res => res.json())
     .then(characters => setCharacters(characters))
   }
 
-  const jumpNext = () => {
-    fetchCharacters(characters.info.next);
-    setPage(page + 1);
-  }
-
-  const jumpPrevious = () => {
-    fetchCharacters(characters.info.prev);
-    setPage(page - 1);
-  }
 
   const jumpTo = (number) => {
-
+    fetchCharacters(number);
+    setCurrentPage(number);
   }
 
 
@@ -39,23 +45,16 @@ const Characters = () => {
       </div>
       <div className="nav-buttons">
         {characters?.info.prev ? (
-          <button className="active-button" onClick={jumpPrevious}>Previous page</button>
+          <button className="active-button" onClick={() => jumpTo(currentPage - 1)}>Previous page</button>
         ) : (
           <button disabled>Previous page</button>
         )}
-        <div>
-          <button onClick={() => jumpTo()} className="active-button">1</button>
-          <button onClick={() => jumpTo()} className="active-button">2</button>
-          <button onClick={() => jumpTo()} className="active-button">3</button>
-          <button onClick={() => jumpTo()} className="active-button">4</button>
-          <button onClick={() => jumpTo()} className="active-button">{page}</button>
-          <button onClick={() => jumpTo()} className="active-button">6</button>
-          <button onClick={() => jumpTo()} className="active-button">7</button>
-          <button onClick={() => jumpTo()} className="active-button">8</button>
-          <button onClick={() => jumpTo()} className="active-button">9</button>
+        <div className="page-buttons">
+          {pageList.map(pageNumber => <PageButton jumpTo={jumpTo} page={pageNumber} currentPage={currentPage} key={pageNumber}/>)}
+          
         </div>
         {characters?.info.next ? (
-          <button className="active-button" onClick={jumpNext}>Next page</button>
+          <button className="active-button" onClick={() => jumpTo(currentPage + 1)}>Next page</button>
         ) : (
           <button disabled>Next page</button>
         )}

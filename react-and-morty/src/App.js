@@ -6,8 +6,6 @@ import Locations from "./components/Locations";
 
 function App() {
   const [display, setDisplay] = useState(null);
-  const [characters, setCharacters] = useState(null);
-  const [locations, setLocations] = useState(null);
 
   const showCharacters = () => {
     setDisplay("Characters");
