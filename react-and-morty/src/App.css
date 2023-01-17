@@ -17,7 +17,7 @@ body {
   width: 400px;
 }
 
-button {
+.active-button {
   display: inline-block;
   font-size: 1.5rem;
   margin: 10px;
@@ -35,7 +35,7 @@ button {
   transition: background-color 100ms linear;
 }
 
-button::before {
+.active-button::before {
   pointer-events: none;
   content: "";
   position: absolute;
@@ -49,7 +49,7 @@ button::before {
   opacity: 0.7;
 }
 
-button::after {
+.active-button::after {
   content: "";
   position: absolute;
   top: 0;
@@ -61,22 +61,39 @@ button::after {
   transition: opacity 100ms linear;
 }
 
-button:hover,
-button:focus {
+.active-button:hover,
+.active-button:focus {
   background-color: #29C7AC;
   color: #1B262C;
   text-shadow: none;
 }
 
-button:hover::before,
-button:focus::before {
+.active-button:hover::before,
+.active-button:focus::before {
   opacity: 1;
 }
 
-button:hover::after,
-button:focus::after {
+.active-button:hover::after,
+.active-button:focus::after {
   opacity: 1;
 }
+
+
+button:disabled {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 10px;
+  background-color: lightgray;
+  color: #207164;
+  border: #222323 0.125em solid;
+  border-radius: 0.25em;
+  padding: 0.25em 1em;
+  text-decoration: none;
+  position: relative;
+  opacity: 0.5;
+}
+
+
 
 .description {
   text-align: center;

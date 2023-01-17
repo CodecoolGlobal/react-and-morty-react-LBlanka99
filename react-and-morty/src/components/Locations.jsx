@@ -9,22 +9,38 @@ const Locations = () => {
     fetchLocations();
   }, []);
   
-  const fetchLocations = () => {
+  const fetchLocations = (currentPage = mainUrls.locations) => {
     setLocations(null);
-    fetch(mainUrls.locations)
+    fetch(currentPage)
     .then(res => res.json())
-    .then(res => res.results)
     .then(locations => setLocations(locations))
+  }
+
+  const jumpNext = () => {
+    fetchLocations(locations.info.next);
+  }
+
+  const jumpPrevious = () => {
+    fetchLocations(locations.info.prev);
   }
 
   return (
     <div>
       <div className="location-list">
-      {locations && locations.map(location => <LocationCard location={location} key={location.id}/>)}
+      {locations && locations.results.map(location => <LocationCard location={location} key={location.id}/>)}
       </div>
       <div className="nav-buttons">
-    <button>Previous page</button>
-    <button>Next page</button>
+        {locations?.info.prev ? (
+          <button onClick={jumpPrevious} className="active-button">Previous page</button>
+        ) : (
+          <button disabled>Previous page</button>
+        )}
+        {locations?.info.next ? (
+          <button onClick={jumpNext} className="active-button">Next page</button>
+        ) : (
+          <button disabled>Next page</button>
+        )}
+    
       </div>
   </div>
   )
