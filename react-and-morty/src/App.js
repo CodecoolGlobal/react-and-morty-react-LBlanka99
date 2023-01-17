@@ -8,19 +8,10 @@ function App() {
   const [display, setDisplay] = useState(null);
   const [characters, setCharacters] = useState(null);
   const [locations, setLocations] = useState(null);
-  //const [characterInfo, setCharacterInfo] = useState("invisible");
 
   const showCharacters = () => {
     setDisplay("Characters");
   };
-
-  //const characterDisplay = (character) => {
-  //  if (characterInfo === "invisible") {
-  //    setCharacterInfo("visible");
-  //  } else {
-  //    setCharacterInfo("invisible");
-  //  }
-  //};
 
   const showLocations = () => {
     setDisplay("Locations");
