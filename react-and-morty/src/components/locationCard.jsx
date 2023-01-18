@@ -11,7 +11,7 @@ const LocationCard = ({ location }) => {
     <div onClick={locationDisplay} className="location-card">
       <div className={`flip-card-inner ${isFlipped ? "flipped" : null}`}>
         <div className="flip-card-front">
-          <div className="location-info">
+          <div className="card-info">
             Name: {location.name}<br />
             Type: {location.type}<br />
           </div>
