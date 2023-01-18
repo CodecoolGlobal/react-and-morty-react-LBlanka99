@@ -61,7 +61,6 @@ body {
   transition: opacity 100ms linear;
 }
 
-
 .active-button:hover,
 .active-button:focus {
   background-color: #29C7AC;
@@ -80,7 +79,6 @@ body {
   opacity: 1;
 }
 
-
 button:disabled {
   display: inline-block;
   font-size: 1.5rem;
@@ -96,8 +94,6 @@ button:disabled {
   opacity: 0.7;
 }
 
-
-
 .description {
   text-align: center;
   font-size: 24px;
@@ -112,17 +108,20 @@ button:disabled {
   text-align: center;
 }
 
-.character-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10 px;
-  justify-content: space-evenly;
-  justify-items: center;
-  align-content: space-evenly;
-  align-items: center;
+.card-info:hover {
+  color: #29c7ac;
 }
 
-.character-card {
+.character-list,
+.location-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.character-card,
+.location-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -181,51 +180,7 @@ button:disabled {
   align-items: center;
 }
 
-.location-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  width: 350px;
-  height: 300px;
-  padding: 10px;
-  border-radius: 15px;
-  border: #29c7ac solid 2px;
-  filter: drop-shadow(3px 3px 6px #29c7ac);
-  background-color: transparent;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.location-card:hover {
-  color: #29c7ac;
-}
-
-.location-info {
-  font-size: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-  text-align: center;
-}
-
-.location-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10 px;
-  justify-content: space-evenly;
-  justify-items: center;
-  align-content: space-evenly;
-  align-items: center;
-}
-
-.location-info:hover {
-  color: #29c7ac;
-}
-
 .page-buttons {
   display: flex;
+  flex-wrap: wrap;
 }
-
