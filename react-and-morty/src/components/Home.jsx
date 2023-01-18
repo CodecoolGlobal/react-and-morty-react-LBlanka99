@@ -5,8 +5,8 @@ const Home = ({showCharacters, showLocations}) => {
     <div className="home-container">
       <img alt="logo" src={logo} width="750"/>
         <div className="home-buttons">
-        <button onClick= {showCharacters}>Characters</button>
-        <button onClick= {showLocations}>Locations</button>
+        <button className="active-button" onClick= {showCharacters}>Characters</button>
+        <button className="active-button" onClick= {showLocations}>Locations</button>
         </div>
       <div className="description">
         <h1>Welcome to the Rick and Morty Library</h1>

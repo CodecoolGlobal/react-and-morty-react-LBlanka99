@@ -1,30 +1,49 @@
 import React, { useState, useEffect } from "react"
 import { mainUrls } from "../api/dataRoutes";
 import LocationCard from "./locationCard";
+import PageButton from "./PageButton";
 
 const Locations = () => {
   const [locations, setLocations] = useState(null);
+  const pageList = [1, 2, 3, 4, 5, 6, 7];
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     fetchLocations();
   }, []);
   
-  const fetchLocations = () => {
+  const fetchLocations = (page = "") => {
     setLocations(null);
-    fetch(mainUrls.locations)
+    fetch(`${mainUrls.locations}${page}`)
     .then(res => res.json())
-    .then(res => res.results)
     .then(locations => setLocations(locations))
+  }
+
+  const jumpTo = (number) => {
+    fetchLocations(number);
+    setCurrentPage(number);
   }
 
   return (
     <div>
       <div className="location-list">
-      {locations && locations.map(location => <LocationCard location={location} key={location.id}/>)}
+      {locations && locations.results.map(location => <LocationCard location={location} key={location.id}/>)}
       </div>
       <div className="nav-buttons">
-    <button>Previous page</button>
-    <button>Next page</button>
+        {locations?.info.prev ? (
+          <button onClick={() => jumpTo(currentPage - 1)} className="active-button">Previous page</button>
+        ) : (
+          <button disabled>Previous page</button>
+        )}
+        <div className="page-buttons">
+          {pageList.map(page => <PageButton page={page} currentPage={currentPage} jumpTo={jumpTo} key={page} />)}
+        </div>
+        {locations?.info.next ? (
+          <button onClick={() => jumpTo(currentPage + 1)} className="active-button">Next page</button>
+        ) : (
+          <button disabled>Next page</button>
+        )}
+    
       </div>
   </div>
   )
