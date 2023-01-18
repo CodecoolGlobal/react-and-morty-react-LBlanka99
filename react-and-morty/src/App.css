@@ -134,8 +134,8 @@ button:disabled {
   border-radius: 30px;
   border: #29c7ac solid 2px;
   filter: drop-shadow(3px 3px 6px #29c7ac);
-  background-color: transparent;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .flip-card-inner {
@@ -155,11 +155,15 @@ button:disabled {
 .flip-card-front,
 .flip-card-back {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  background-color: transparent;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transform: rotateX(0deg);
 }
 
 .flip-card-back {
@@ -175,6 +179,27 @@ button:disabled {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.location-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 350px;
+  height: 300px;
+  padding: 10px;
+  border-radius: 15px;
+  border: #29c7ac solid 2px;
+  filter: drop-shadow(3px 3px 6px #29c7ac);
+  background-color: transparent;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.location-card:hover {
+  color: #29c7ac;
 }
 
 .location-info {
@@ -196,26 +221,8 @@ button:disabled {
   align-items: center;
 }
 
-.location-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  width: 350px;
-  padding: 10px;
-  border-radius: 15px;
-  border: #29c7ac solid 2px;
-  filter: drop-shadow(3px 3px 6px #29c7ac);
-}
-
-.location-card:hover {
-  background-color: #29c7ac;
-}
-
 .location-info:hover {
-
-  color: #1B262C;
+  color: #29c7ac;
 }
 
 .page-buttons {
