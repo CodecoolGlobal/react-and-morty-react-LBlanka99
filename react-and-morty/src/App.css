@@ -142,6 +142,7 @@ button:focus::after {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transform: rotateX(0deg);
 }
 
 .flip-card-back {
@@ -198,7 +199,6 @@ button:focus::after {
   align-content: space-evenly;
   align-items: center;
 }
-
 
 .location-info:hover {
   color: #1b262c;
