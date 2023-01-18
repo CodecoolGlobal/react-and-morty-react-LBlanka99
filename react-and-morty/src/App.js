@@ -22,11 +22,7 @@ function App() {
   };
 
   const handleToggle = () => {
-    if (infiniteScroll) {
-      setInfiniteScroll(false);
-    } else {
-      setInfiniteScroll(true);
-    }
+    setInfiniteScroll(!infiniteScroll);
   }
 
   
