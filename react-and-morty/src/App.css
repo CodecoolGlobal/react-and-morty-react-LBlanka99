@@ -226,6 +226,7 @@ button:disabled {
 .slider {
   position: absolute;
   cursor: pointer;
+  border: #29C7AC solid 2px;
   top: 0;
   left: 0;
   right: 0;
@@ -240,6 +241,7 @@ button:disabled {
   content: "";
   height: 26px;
   width: 26px;
+  top: 2px;
   left: 4px;
   bottom: 4px;
   background-color: #29c7ac;
