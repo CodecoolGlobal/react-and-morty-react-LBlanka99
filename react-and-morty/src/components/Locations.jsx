@@ -3,16 +3,15 @@ import { mainUrls } from "../api/dataRoutes";
 import LocationCard from "./locationCard";
 import PageButton from "./PageButton";
 
-const Locations = () => {
+const Locations = ({currentPage, setCurrentPage}) => {
   const [locations, setLocations] = useState(null);
   const pageList = [1, 2, 3, 4, 5, 6, 7];
-  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetchLocations();
-  }, []);
+    fetchLocations(currentPage);
+  }, [currentPage]);
   
-  const fetchLocations = (page = "") => {
+  const fetchLocations = (page) => {
     setLocations(null);
     fetch(`${mainUrls.locations}${page}`)
     .then(res => res.json())
@@ -20,7 +19,6 @@ const Locations = () => {
   }
 
   const jumpTo = (number) => {
-    fetchLocations(number);
     setCurrentPage(number);
   }
 
