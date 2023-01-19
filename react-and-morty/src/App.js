@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <Home showCharacters={showCharacters} showLocations={showLocations} handleToggle={handleToggle}/>
+      <Home showCharacters={showCharacters} showLocations={showLocations} display={display} handleToggle={handleToggle}/>
       {element}
     </div>
   );

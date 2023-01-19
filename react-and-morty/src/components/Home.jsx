@@ -1,5 +1,6 @@
 import logo from "./Logo.png"
-const Home = ({showCharacters, showLocations, handleToggle}) => {
+
+const Home = ({showCharacters, showLocations, handleToggle, display}) => {
 
 
   return (
@@ -20,10 +21,11 @@ const Home = ({showCharacters, showLocations, handleToggle}) => {
         </div>
         </div>
       <div className="description">
+      {!display && <div className="description">
         <h1>Welcome to the Rick and Morty Library</h1>
         <p>You can navigate through the library by clicking on either the Characters button or the Locations button.</p>
         <p>Have fun!</p>
-      </div>
+      </div>}
     </div>
   )
 }

@@ -6,8 +6,9 @@ import PageButton from "./PageButton";
 const Characters = ({currentPage, setCurrentPage}) => {
   const [characters, setCharacters] = useState(null);
   const pageListLength = 9;
-  
   let pageList = [];
+
+
   if (characters) {
     let firstPageNumber;
     if (currentPage <= pageListLength / 2) {
@@ -16,26 +17,21 @@ const Characters = ({currentPage, setCurrentPage}) => {
       firstPageNumber = Math.min(currentPage - Math.floor(pageListLength / 2), characters.info.pages - (pageListLength - 1));
     }
     pageList = Array.from( {length: pageListLength}, (v, i) => i + firstPageNumber);
-  } 
+  };
    
-  
-
   useEffect(() => {
     fetchCharacters(currentPage);
   }, [currentPage]);
   
   const fetchCharacters = (page) => {
-    setCharacters(null);
     fetch(`${mainUrls.characters}${page}`)
     .then(res => res.json())
     .then(characters => setCharacters(characters))
-  }
-
-
+  };
 
   const jumpTo = (number) => {
     setCurrentPage(number);
-  }
+  };
 
 
   return (
