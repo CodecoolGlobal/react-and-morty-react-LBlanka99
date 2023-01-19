@@ -3,10 +3,10 @@ import { mainUrls } from "../api/dataRoutes";
 import CharacterCard from "./characterCard";
 import PageButton from "./PageButton";
 
-const Characters = () => {
+const Characters = ({currentPage, setCurrentPage}) => {
   const [characters, setCharacters] = useState(null);
   const pageListLength = 9;
-  const [currentPage, setCurrentPage] = useState(1);
+  
   let pageList = [];
   if (characters) {
     let firstPageNumber;
@@ -21,10 +21,10 @@ const Characters = () => {
   
 
   useEffect(() => {
-    fetchCharacters();
-  }, []);
+    fetchCharacters(currentPage);
+  }, [currentPage]);
   
-  const fetchCharacters = (page = "") => {
+  const fetchCharacters = (page) => {
     setCharacters(null);
     fetch(`${mainUrls.characters}${page}`)
     .then(res => res.json())
@@ -34,7 +34,6 @@ const Characters = () => {
 
 
   const jumpTo = (number) => {
-    fetchCharacters(number);
     setCurrentPage(number);
   }
 
