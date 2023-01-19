@@ -25,7 +25,8 @@ const Home = ({showCharacters, showLocations, handleToggle, display}) => {
         <h1>Welcome to the Rick and Morty Library</h1>
         <p>You can navigate through the library by clicking on either the Characters button or the Locations button.</p>
         <p>Have fun!</p>
-      </div>}
+        </div>}
+      </div>
     </div>
   )
 }
