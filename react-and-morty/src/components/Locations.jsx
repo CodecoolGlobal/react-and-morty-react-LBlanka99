@@ -12,15 +12,15 @@ const Locations = ({currentPage, setCurrentPage}) => {
   }, [currentPage]);
   
   const fetchLocations = (page) => {
-    setLocations(null);
     fetch(`${mainUrls.locations}${page}`)
     .then(res => res.json())
     .then(locations => setLocations(locations))
-  }
+  };
 
   const jumpTo = (number) => {
     setCurrentPage(number);
-  }
+  };
+
 
   return (
     <div>
