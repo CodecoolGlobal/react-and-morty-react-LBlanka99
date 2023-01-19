@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from "react";
 import { mainUrls } from "../api/dataRoutes";
 import CharacterCard from "./characterCard";
@@ -19,36 +20,30 @@ const InfiniteCharacters = ({currentPage, setCurrentPage}) => {
             setCharacters([...characters, ...res.results]);
             setIsFetching(false);
             setLoadText(null);
-        })
-        
-        
-
-    }  
-
-
+        });
+    };
 
     const onScroll = () => {
-        const scrollTop = document.documentElement.scrollTop
-        const scrollHeight = document.documentElement.scrollHeight
-        const clientHeight = document.documentElement.clientHeight
+        const scrollTop = document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
 
         if (isFetching) {
             return;
-        }
+        };
         
         if (scrollTop + clientHeight >= scrollHeight && currentPage < 42) {
             setCurrentPage(currentPage + 1);
-            setLoadText("Loading...")
+            setLoadText("Loading...");
         } else if (currentPage >= 42) {
             setLoadText("No more characters");
-        }
-    
-  }
+        };
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-    }, [characters])
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+    }, [isFetching, currentPage]);
 
 
   return (

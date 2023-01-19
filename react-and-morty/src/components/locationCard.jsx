@@ -7,6 +7,7 @@ const LocationCard = ({ location }) => {
     setFlipped(!isFlipped);
   };
 
+  
   return (
     <div onClick={locationDisplay} className="location-card">
       <div className={`flip-card-inner ${isFlipped ? "flipped" : null}`}>
