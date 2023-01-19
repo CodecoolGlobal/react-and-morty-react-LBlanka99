@@ -28,7 +28,6 @@ const Home = ({showCharacters, showLocations, handleToggle, display}) => {
         </div>}
       </div>
     </div>
-    </div>
   )
 }
 

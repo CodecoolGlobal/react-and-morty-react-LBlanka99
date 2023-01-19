@@ -5,6 +5,7 @@ body {
 }
 
 .home-container {
+  font-size: 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +25,9 @@ body {
 }
 
 .toggle-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   text-align: right;
   padding: 5px;
   margin-right: 20px;
@@ -31,7 +35,7 @@ body {
 
 .active-button {
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin: 10px;
   background-color: #1b262c;
   color: #29c7ac;
@@ -92,7 +96,7 @@ body {
 
 button:disabled {
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin: 10px;
   background-color: lightgray;
   color: #207164;
@@ -115,6 +119,7 @@ button:disabled {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 10px;
   color: white;
   text-align: center;
 }
@@ -139,7 +144,7 @@ button:disabled {
   align-items: center;
   margin: 15px 10px;
   width: 350px;
-  height: 400px;
+  height: 450px;
   padding: 10px;
   border-radius: 30px;
   border: #29c7ac solid 2px;
