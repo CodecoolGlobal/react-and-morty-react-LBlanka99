@@ -27,6 +27,7 @@ const Home = ({showCharacters, showLocations, handleToggle, display}) => {
         <p>Have fun!</p>
       </div>}
     </div>
+    </div>
   )
 }
 
