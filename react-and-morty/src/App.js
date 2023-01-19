@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <Home showCharacters={showCharacters} showLocations={showLocations} />
+      <Home showCharacters={showCharacters} showLocations={showLocations} display={display} />
       {element}
     </div>
   );
