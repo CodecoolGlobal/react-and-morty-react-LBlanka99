@@ -5,6 +5,9 @@ import Home from "./components/Home";
 import Locations from "./components/Locations";
 import InfiniteCharacters from "./components/InfiniteCharacters";
 import InfiniteLocations from "./components/InfiniteLocations";
+import CharacterCard from "./components/characterCard";
+import LocationCard from "./components/locationCard";
+import { mainUrls } from "./api/dataRoutes";
 
 function App() {
   const [display, setDisplay] = useState(null);
@@ -25,22 +28,30 @@ function App() {
     setInfiniteScroll(!infiniteScroll);
   }
 
-  
+
   if (display === "Characters" && infiniteScroll) {
-    element = <InfiniteCharacters currentPage={currentPageCharacters} setCurrentPage={setCurrentPageCharacters}/>;
+    element = (
+      <InfiniteCharacters
+        currentPage={currentPageCharacters}
+        setCurrentPage={setCurrentPageCharacters} />
+    );
   } else if (display === "Characters") {
-    element = <Characters currentPage={currentPageCharacters} setCurrentPage={setCurrentPageCharacters}/>
+    element = <Characters currentPage={currentPageCharacters} setCurrentPage={setCurrentPageCharacters} />
   }
 
   if (display === "Locations" && infiniteScroll) {
-    element = <InfiniteLocations currentPage={currentPageLocations} setCurrentPage={setCurrentPageLocations}/>;
+    element = (
+      <InfiniteLocations
+        currentPage={currentPageCharacters}
+        setCurrentPage={setCurrentPageCharacters} />
+    );
   } else if (display === "Locations") {
-    element = <Locations currentPage={currentPageLocations} setCurrentPage={setCurrentPageLocations}/>
+    element = <Locations currentPage={currentPageLocations} setCurrentPage={setCurrentPageLocations} />
   }
 
   return (
     <div className="App">
-      <Home showCharacters={showCharacters} showLocations={showLocations} display={display} handleToggle={handleToggle}/>
+      <Home showCharacters={showCharacters} showLocations={showLocations} display={display} handleToggle={handleToggle} />
       {element}
     </div>
   );
