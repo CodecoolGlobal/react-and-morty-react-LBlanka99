@@ -9,7 +9,7 @@
 [![Issues][issues-shield]][issues-url]
 <div align="center">
 <a href="https://github.com/CodecoolGlobal/react-and-morty-react-LBlanka99">
-    <img src="/react-and-morty/src/components/Logo.png" alt="Logo" width="220" height="180">
+    <img src="/react-and-morty/src/components/Logo.png" alt="Logo" width="300">
   </a>
 
 <h3 align="center">React and Morty</h3>
