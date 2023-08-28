@@ -9,7 +9,7 @@
 [![Issues][issues-shield]][issues-url]
 
 <a href="https://github.com/CodecoolGlobal/react-and-morty-react-LBlanka99">
-    <img src="/src/components/Logo.png" alt="Logo" width="220" height="180">
+    <img src="src/components/Logo.png" alt="Logo" width="220" height="180">
   </a>
 
 <h3 align="center">:ocean:React and Morty:ocean:</h3>
