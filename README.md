@@ -91,7 +91,7 @@ Please see the core dependencies and installation steps below:
    ```
 2. In your terminal, move into the project’s folder  _OR_ open the project in VsCode
 
-3. Install the dependencies in the terminal with comman `npm i`
+3. Install the dependencies in the terminal with command: `npm i`
 4. Run the app in the terminal with the following command: `npm start`
 5. After start you can reach the site on the following url: _http://localhost:3000/_
 
@@ -114,7 +114,7 @@ Please see the core dependencies and installation steps below:
 
 <!-- CONTRIBUTING -->
 ## Contributing
-This porject was made by four Codecool students: Blanka Losonci, Anna Cseke, Péter Jung, Krisztina Angel.
+This project was made by four Codecool students: Blanka Losonci, Anna Cseke, Péter Jung, Krisztina Angel.
 
 <!-- CONTACT -->
 ## Contact
