@@ -80,8 +80,9 @@ Please see the core dependencies and installation steps below:
 ### Prerequisites
 1. NPM
 2. NODE.JS
-3. REACT
-4. VISUAL STUDIO CODE (Optional)
+3. JAVASCRIPT
+4. REACT
+5. VISUAL STUDIO CODE (Optional)
 
 
 ### Installation
