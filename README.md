@@ -18,7 +18,6 @@
     This is a web-based application using React framework. The theme is the famous cartoon show Rick and Morty.
     <br />
     <br />
-    <a href="https://docs.google.com/presentation/d/1xKTZuIEUg5LuevlzVpBuXT39q6ra_aJXxAbsaKOWWuw/edit?usp=sharing">View Demo :computer:</a>
     ·
     <a href="https://github.com/CodecoolGlobal/react-and-morty-react-LBlanka99">Report Bug :lady_beetle:</a>
     ·
@@ -141,7 +140,7 @@ Project Link: [https://github.com/CodecoolGlobal/react-and-morty-react-LBlanka99
 [issues-shield]: https://img.shields.io/github/issues/CodecoolGlobal/react-and-morty-react-LBlanka99.svg?style=for-the-badge
 [issues-url]: https://github.com/CodecoolGlobal/react-and-morty-react-LBlanka99/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-Peter]: https://www.linkedin.com/in/peter-jung-66833213b/
+[linkedin-Peter]: https://www.linkedin.com/in/pjung-dev
 [linkedin-Anna]: https://www.linkedin.com/in/anna-cseke-847b1963/
 [linkedin-Blanka]: https://www.linkedin.com/in/blanka-losonci-3190b8287/
 [product-screenshot]: images/screenshot.png
