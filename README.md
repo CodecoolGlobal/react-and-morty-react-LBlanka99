@@ -18,7 +18,7 @@
     This is a web-based application using React framework. The theme is the famous cartoon show Rick and Morty.
     <br />
     <br />
-    <a href="https://github.com/CodecoolGlobal/react-and-morty-react-LBlanka99">View Demo :computer:</a>
+    <a href="https://docs.google.com/presentation/d/1xKTZuIEUg5LuevlzVpBuXT39q6ra_aJXxAbsaKOWWuw/edit?usp=sharing">View Demo :computer:</a>
     ·
     <a href="https://github.com/CodecoolGlobal/react-and-morty-react-LBlanka99">Report Bug :lady_beetle:</a>
     ·
